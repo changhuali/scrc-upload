@@ -7,7 +7,7 @@ export default class Test extends React.Component {
     children: PropTypes.node.isRequired,
   }
   handleClickBubble = () => {
-    this.fileInput.onClick();
+    this.fileInput.click();
   }
   handleFileRef = (inputRef) => {
     this.fileInput = inputRef;

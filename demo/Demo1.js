@@ -4,7 +4,7 @@ import DemoComp from '../component';
 export default function Demo1() {
   return (
     <DemoComp>
-      test11
+      click me1
     </DemoComp>
   );
 }

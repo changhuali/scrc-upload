@@ -13,7 +13,7 @@ const PUBLIC_PATH = webpackConfig.output.publicPath;
 const app = express();
 const devMiddleWareInstance = devMiddleWare(compiler, {
   publicPath: PUBLIC_PATH,
-  hot: true,
+  lazy: false,
   stats: {
     colors: true,
     assets: true,

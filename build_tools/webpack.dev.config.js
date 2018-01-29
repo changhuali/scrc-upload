@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    main: ['webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr', './demo/index.js'],
+    main: ['react-hot-loader/patch', 'webpack-hot-middleware/client?path=http://localhost:8080/__webpack_hmr', './demo/index.js'],
     vendor: ['react', 'react-dom']
   },
   output: {
@@ -65,11 +65,11 @@ module.exports = {
     modules: [path.resolve(__dirname, '../component'), 'node_modules'],
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './dist/index.html',
     }),
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'manifest'],
       minchunks: Infinity,

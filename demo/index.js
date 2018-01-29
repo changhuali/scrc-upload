@@ -1,16 +1,20 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Demo1 from './Demo1';
+import CombineDemo from './CombineDemo';
+import { AppContainer } from 'react-hot-loader'
 
-function AllDemos() {
-  // Append your demo component with unique key into the follow array
-  return [
-    <Demo1 key="demo11" />,
-  ];
+const mountNode = document.getElementById('react-root');
+const render = (Component) => {
+  ReactDom.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    mountNode
+  );
+};
+
+render(CombineDemo);
+
+if(module.hot) {
+  module.hot.accept();
 }
-
-const root = document.getElementById('react-root');
-ReactDom.render(
-  <AllDemos />,
-  root
-);
