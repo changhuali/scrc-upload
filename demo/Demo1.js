@@ -9,23 +9,23 @@ export default class Demo1 extends React.Component {
       base64File: [],
     };
   }
-  beforeUpload = (files) => {
-    console.log(Array.from(files));
-    return true;
-  }
   onChange = (files) => {
     this.resetState();
-    Array.from(files).forEach(file => {
+    Array.from(files).forEach((file) => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
       reader.onload = () => {
         const newFileList = this.state.base64File.slice();
         newFileList.push(reader.result);
         this.setState({
-          base64File: newFileList
+          base64File: newFileList,
         });
-      }
+      };
     });
+  }
+  beforeUpload = (files) => {
+    console.log(Array.from(files));
+    return true;
   }
   genPreview = () => {
     return this.state.base64File.map((img, index) => {
@@ -53,7 +53,7 @@ export default class Demo1 extends React.Component {
         className="demo1-preview"
       >
         {this.genPreview()}
-      </div>
+      </div>,
     ];
   }
 }

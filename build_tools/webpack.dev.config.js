@@ -17,7 +17,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/],
         use: [
           'babel-loader',
           'eslint-loader'
@@ -63,6 +63,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '.json', '*'],
     modules: [path.resolve(__dirname, '../component'), 'node_modules'],
+
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

@@ -11,10 +11,13 @@
     "express": "^4.16.2",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^3.1.3",
+    "jsonml-to-react-element": "^1.0.0"
   },
   "scripts": {
     "dev": "node ./build_tools/webpack-dev-server.js",
+    "convert-md-html": "node ./build_tools/genTemplate.js",
     "pre-publish": "./node_modules/.bin/gulp --gulpfile ./build_tools/gulpfile.js",
     "publish": "npm publish"
   },
@@ -40,9 +43,9 @@
     "html-webpack-plugin": "^2.30.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
+    "mark-twain": "^2.0.2",
     "open": "0.0.5",
     "postcss-loader": "^2.0.10",
-    "react-hot-loader": "^3.1.3",
     "style-loader": "^0.19.1",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
